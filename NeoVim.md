@@ -12,6 +12,12 @@
 | `\tm`       | Switch to `table mode`                                  |
 
 ## Navigation
+| Key | Action |
+|-----+--------|
+| `w` | test   |
+
+
+
 | Key            | Action                                                                     |
 |----------------+----------------------------------------------------------------------------|
 | `w`/`W`        | Move to the next `word`/`WORD`                                             |
@@ -45,23 +51,19 @@ The commands take the format : <operator> <i|a> <delimiter>
 | `d`      | delete.                                    |
 | `y`      | yank (copy)                                |
 | `v`      | visually `highlight` (userful for preview) |
-|----------+--------------------------------------------|
 
 ### Delimiters
-|--------------------------+--------------------------------------------|
 | Delimiter                | Notes                                      |
+|--------------------------+--------------------------------------------|
 | `(` or `<` or `[` or `{` | Different types of `brackets`              |
 | `"` or `'` or `/``       | `quotes` or `back tick`                    |
 | `w` or `s` or `p` or `t` | `word` or `sentence` or `paragraph` or XML |
-|--------------------------+--------------------------------------------|
 
 ### Examples
-|---------+--------------------------------------------------------------------------------------|
 | Command | Notes                                                                                |
 |---------+--------------------------------------------------------------------------------------|
 | ci{     | `changes` (delets + `insert` mode) text `inside` the `{` `}` brackets                |
 | ca(     | `changes` (delete + `insert` mode) text `around`(including) the `(` and `)` brackets |
 | di<     | `deletes` text `inside` the `<` `>` brackets                                         |
 | yi{     | `yank` (copy) `inside` the `{` `}`                                                   |
-|---------+--------------------------------------------------------------------------------------|
 

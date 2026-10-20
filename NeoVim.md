@@ -1,7 +1,6 @@
 # NeoVim Cheat Sheet
 
 ## Mode Switching
-|-------------+---------------------------------------------------------|
 | Key         | Action                                                  |
 | ----------- | ------------------------------------------------------- |
 | `Esc`       | Switch to `normal` mode                                 |
@@ -11,10 +10,8 @@
 | `v`/`V`     | Switch to `visual` / `Visual Line` mode                 |
 | `Ctrl`+`V`  | Switch to `visual block` mode                           |
 | `\tm`       | Switch to `table mode`                                  |
-|-------------+---------------------------------------------------------|
 
 ## Navigation
-|----------------+----------------------------------------------------------------------------|
 | Key            | Action                                                                     |
 |----------------+----------------------------------------------------------------------------|
 | `w`/`W`        | Move to the next `word`/`WORD`                                             |
@@ -22,10 +19,8 @@
 | `gg`/`G`       | Move cursor to `top`/`bottom` line                                         |
 | `zt`/`zb`/`zz` | Scroll view to put the cursor at the `top`/`bottom`/`middle` of the screen |
 | `#gg`          | Move cursor to exact line number where `#` is the line number to go to     |
-|----------------+----------------------------------------------------------------------------|
 
 ## Tabs
-| ------------------ | --------------------------------------------------------------------- |
 | Key                | Action                                                                |
 | ------------------ | --------------------------------------------------------------------- |
 | `:tabnew` [file]   | Open a `new tab`, specify the filename of the file you wish to open   |
@@ -34,7 +29,6 @@
 | `:tabs`            | `List` tabs                                                           |
 | `:tabc`            | `Close` the current tab                                               |
 | `:tabo`            | `Close All Other` tabs                                                |
-|--------------------+-----------------------------------------------------------------------|
 
 ## Operate between Delimiters.
 Text objects allow you to operate on a portion of text between different types of delimiters (e.g `(` `<` `[` `{`).
@@ -45,7 +39,6 @@ The commands take the format : <operator> <i|a> <delimiter>
 `a` = around (including) the delimiter
 
 ### Operators
-|----------+--------------------------------------------|
 | Operator | Meaning                                    |
 |----------+--------------------------------------------|
 | `c`      | change (delete, then enter Insert mode)    |

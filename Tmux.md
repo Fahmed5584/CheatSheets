@@ -2,11 +2,15 @@
 `Ctrl+B` is the prefix used before every binding.
 
 ## Commands
-| Command                  | Notes                               |
-|--------------------------|-------------------------------------|
-| `tmux new -s name`       | New named session                   |
-| `tmux a -t name/num`     | Attach to session by name or number |
-| `tmux ls`                | List tmux sessions                  |
+| Command                  | Notes                                                        |
+|--------------------------|--------------------------------------------------------------|
+| `tmux new -s name`       | New named session                                            |
+| `tmux a -t name/num`     | Attach to session by name or number                          |
+| `tmux ls`                | List tmux sessions                                           |
+| `tmux splitw -fv`        | Split a new pane across the `full width` at the bottom       |
+| `tmux splitw -fh`        | Split a new pane across the `full height` on the right       |
+
+The `splitw` commands can also be typed at the tmux command prompt (`:`) without the `tmux` part (e.g. `:splitw -fv`). Add `-l 30%` to set the new pane's size.
 
 ## Help
 | Key | Notes                                |

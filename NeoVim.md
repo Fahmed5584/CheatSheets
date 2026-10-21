@@ -95,6 +95,46 @@ A number before a command repeats it.
 | `:%s/old/new/g` | Replace every `old` with `new` in the file   |
 | `:noh`          | Clear search highlighting                    |
 
+## Jumping Around Code
+### Jump History
+Neovim records your position whenever you make a big jump (e.g. `gd`, `G`, `/search`, `{n}gg`), even across files.
+
+| Key        | Action                                                         |
+|------------|----------------------------------------------------------------|
+| `Ctrl`+`o` | Go `back` to the previous jump position (e.g. after `gd`)      |
+| `Ctrl`+`i` | Go `forward` again (`Tab` does the same thing)                 |
+| `:jumps`   | `List` the jump history                                        |
+| ``` `` ``` | Toggle between the `current` and `last` jump position          |
+| `g;`/`g,`  | Go to the `previous`/`next` place you made a change            |
+| `gi`       | Go to where you last left insert mode, and enter insert mode   |
+
+### LSP
+These only work in buffers with an LSP attached. Keys marked `*` are my mappings from `~/.config/nvim/init.lua`; the rest are Neovim defaults.
+
+| Key                  | Action                                                       |
+|----------------------|--------------------------------------------------------------|
+| `gd` `*`             | Go to `definition` (stock: `Ctrl`+`]`)                       |
+| `gD` `*`             | Go to `declaration`                                          |
+| `grr`                | List all `references` to the symbol under the cursor         |
+| `gri`                | Go to `implementation` (e.g. classes implementing interface) |
+| `grt`                | Go to the `type definition` of the symbol                    |
+| `grn`                | `Rename` the symbol everywhere                               |
+| `gra`                | Show `code actions` (quick fixes, add `using`, etc.)         |
+| `gO`                 | List all `symbols` (methods, properties) in the file         |
+| `K`                  | Show `hover` docs / type info for the symbol                 |
+| `Ctrl`+`s`           | Show `signature` help (Insert mode, while typing args)       |
+| `]d`/`[d`            | Go to the `next`/`previous` diagnostic (error/warning)       |
+| `<leader>e` `*`      | Show the `error` under the cursor (stock: `Ctrl`+`w` `d`)    |
+
+### Quickfix List
+`grr`, `gri` and `gO` show their results in the quickfix list (a window at the bottom).
+
+| Key                | Action                                                 |
+|--------------------|--------------------------------------------------------|
+| `Enter`            | Jump to the result under the cursor                    |
+| `]q`/`[q`          | Go to the `next`/`previous` result (from any window)   |
+| `:copen`/`:cclose` | `Open`/`Close` the quickfix window                     |
+
 ## My Custom Mappings
 Mappings set in `~/.config/nvim/init.lua` (leader key = `Space`).
 
@@ -106,9 +146,6 @@ Mappings set in `~/.config/nvim/init.lua` (leader key = `Space`).
 | `<leader>fb` | Normal | fzf: open buffers            | `:ls` then `:b{n}`                   |
 | `<leader>fr` | Normal | fzf: recent files            | `:browse oldfiles`                   |
 | `<leader>tm` | Normal | Toggle table mode (plugin)   | N/A                                  |
-| `gd`         | Normal | LSP: go to definition        | `Ctrl`+`]` (when an LSP is attached) |
-| `gD`         | Normal | LSP: go to declaration       | N/A                                  |
-| `<leader>e`  | Normal | LSP: show error under cursor | `Ctrl`+`w` then `d`                  |
 | `:Game`      | Cmd    | Play Vim-Be-Good             | N/A                                  |
 
-`gd`, `gD` and `<leader>e` only apply in buffers with an LSP attached. The stock fzf alternatives have no fuzzy matching.
+My LSP mappings (`gd`, `gD`, `<leader>e`) are listed under [LSP](#lsp). The stock fzf alternatives have no fuzzy matching.

@@ -12,7 +12,6 @@ TOOLS = [
 
 # tmux sections whose keys are typed after the prefix
 TMUX_PREFIXED = {"Help", "Copy / Paste", "Sessions", "Panes", "Windows"}
-FIXES = {"Copilt": "Copilot", "GoTo / OpenNew": "Go to / open new", "GoTo ": "Go to "}
 KEYNAMES = {"Ctrl", "Alt", "Shift", "Esc", "Tab", "Enter", "Space", "PgUp", "PgDn", "Home", "HOME"}
 
 CODE_RE = re.compile(r"(`+)(.+?)\1")
@@ -63,18 +62,12 @@ def sep(s, key):
     return f' <span class="kx">{esc(s2)}</span> '
 
 
-def fix(s):
-    for a, b in FIXES.items():
-        s = s.replace(a, b)
-    return s
-
-
 def parse(path):
     sections, cur, parent, intro = [], None, None, []
     lines = Path(path).read_text().splitlines()
     i = 0
     while i < len(lines):
-        line = fix(lines[i].rstrip())
+        line = lines[i].rstrip()
         i += 1
         if line.startswith("# "):
             continue
@@ -90,7 +83,7 @@ def parse(path):
             header = [c.strip() for c in line.strip().strip("|").split("|")]
             i += 1  # separator
             while i < len(lines) and lines[i].startswith("|"):
-                cells = [c.strip() for c in fix(lines[i]).strip().strip("|").split("|")]
+                cells = [c.strip() for c in lines[i].strip().strip("|").split("|")]
                 i += 1
                 row = {"k": inline(cells[0], key=True), "d": "", "badge": "", "meta": []}
                 main_done = False

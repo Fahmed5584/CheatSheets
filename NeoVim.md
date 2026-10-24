@@ -127,7 +127,7 @@ These only work in buffers with an LSP attached. Keys marked `*` are my mappings
 | `<leader>e` `*`      | Show the `error` under the cursor (stock: `Ctrl`+`w` `d`)    |
 
 ### Quickfix List
-`grr`, `gri` and `gO` show their results in the quickfix list (a window at the bottom).
+`grr` and `gri` show their results in the quickfix list (a window at the bottom). `gO` uses the location list instead: same idea, but `]l`/`[l` and `:lopen`/`:lclose`.
 
 | Key                | Action                                                 |
 |--------------------|--------------------------------------------------------|

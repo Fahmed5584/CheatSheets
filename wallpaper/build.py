@@ -6,6 +6,7 @@ Writes cheatsheet-wallpaper.png (2560x1440) and cheatsheet-wallpaper@2x.png (512
 Needs Firefox (headless screenshots) and the Fira Sans Condensed, MesloLGS Nerd Font fonts.
 """
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -119,6 +120,8 @@ def render(html_path, png_path, scale):
 
 
 def main():
+    if not shutil.which("firefox"):
+        sys.exit("build.py: firefox not found on PATH; it is needed to render the wallpaper")
     out = Path(sys.argv[1]).expanduser().resolve() if len(sys.argv) > 1 else HERE
     out.mkdir(parents=True, exist_ok=True)
     html = build_html(load(HERE.parent))

@@ -37,6 +37,6 @@ Requirements:
   badge, and any further columns become a grey second line (e.g. "Stock: …").
 - Text in backticks: plain words (`` `normal` ``) are highlighted, anything else (`` `Ctrl`+`V` ``, `` `:noh` ``) is shown as a key.
 - Paragraphs shaped like `` `key` to do something `` become rows; other paragraphs become notes.
-- tmux sections listed in `TMUX_PREFIXED` get a PREFIX tag; `FIXES` corrects typos on the wallpaper only.
+- tmux sections listed in `TMUX_PREFIXED` get a PREFIX tag.
 
 Colours live in `THEME` at the top of `wallpaper/build.py`.
